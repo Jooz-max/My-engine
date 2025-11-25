@@ -1,0 +1,27 @@
+# Node / JS build files
+node_modules/
+dist/
+build/
+*.log
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# Editor temp
+*.tmp
+*.temp
+.idea/
+.vscode/
+
+# Cache
+.cache/
+npm-debug.log*
+yarn-error.log*
+
+# Webpack/Vite outputs
+*.bundle.js
+*.bundle.map
+
+# Optional – ignore user test models
+assets/models/
