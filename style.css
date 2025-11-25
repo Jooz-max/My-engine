@@ -1,4 +1,3 @@
-/* Dark theme colors */
 :root {
     --bg-dark: #181818;
     --bg-panel: #202020;
@@ -33,7 +32,7 @@ body {
     align-items: center;
 }
 
-#import-btn {
+#left-pane button {
     width: 100%;
     padding: 12px;
     border: none;
@@ -46,17 +45,10 @@ body {
 /* Center 3D Viewport */
 #center-viewport {
     flex: 1;
-    background: #111;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#viewport-canvas {
-    width: 100%;
-    height: 100%;
-    background: #151515;
 }
 
 /* Right Pane */
@@ -70,7 +62,7 @@ body {
     align-items: center;
 }
 
-#import-btn-right {
+#right-pane button {
     width: 100%;
     padding: 12px;
     border: none;
@@ -78,4 +70,4 @@ body {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-}
+    }
