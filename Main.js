@@ -8,6 +8,58 @@ importBtn.addEventListener("click", () => {
 });
 
 // ----------------------------
+// GLB Import logic (added)
+// ----------------------------
+
+// GLTFLoader (make sure to include in HTML if not already)
+// <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
+const loader = new THREE.GLTFLoader();
+const importedModels = [];
+const importList = document.createElement("div");
+importList.style.marginTop = "10px";
+importList.style.display = "flex";
+importList.style.flexDirection = "column";
+importList.style.gap = "5px";
+document.getElementById("left-pane").appendChild(importList);
+
+importBtn.addEventListener("click", () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".glb";
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const url = URL.createObjectURL(file);
+
+        const modelBtn = document.createElement("button");
+        modelBtn.textContent = file.name;
+        modelBtn.style.width = "100%";
+        modelBtn.style.background = "#3a8bff";
+        modelBtn.style.border = "none";
+        modelBtn.style.borderRadius = "5px";
+        modelBtn.style.color = "#fff";
+        modelBtn.style.cursor = "pointer";
+
+        importList.appendChild(modelBtn);
+
+        modelBtn.addEventListener("click", () => {
+            loader.load(url, (gltf) => {
+                const model = gltf.scene;
+                model.position.set(0, 0, 0);
+                scene.add(model);
+                importedModels.push(model);
+
+                // Attach gizmo to the latest imported model
+                transformControls.attach(model);
+                transformControls.visible = true;
+            });
+        });
+    };
+    input.click();
+});
+
+// ----------------------------
 // Right Pane CODE button logic
 // ----------------------------
 const codeBtn = document.getElementById("btn-code");
