@@ -1,0 +1,81 @@
+/* Dark theme colors */
+:root {
+    --bg-dark: #181818;
+    --bg-panel: #202020;
+    --outline: #2c2c2c;
+    --accent: #3a8bff;
+    --text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Left Pane */
+#left-pane {
+    width: 160px;
+    background: var(--bg-panel);
+    border-right: 2px solid var(--outline);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#import-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: var(--accent);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Center 3D Viewport */
+#center-viewport {
+    flex: 1;
+    background: #111;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#viewport-canvas {
+    width: 100%;
+    height: 100%;
+    background: #151515;
+}
+
+/* Right Pane */
+#right-pane {
+    width: 180px;
+    background: var(--bg-panel);
+    border-left: 2px solid var(--outline);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#import-btn-right {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: var(--accent);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
