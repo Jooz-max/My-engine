@@ -8,18 +8,34 @@
 </head>
 <body>
 
+<!-- Left Pane -->
 <div id="left-pane">
     <button id="import-btn">IMPORT</button>
 </div>
 
-<div id="center-viewport">
-    <canvas id="viewport-canvas"></canvas>
-</div>
+<!-- Center 3D Viewport -->
+<div id="center-viewport"></div>
 
+<!-- Right Pane -->
 <div id="right-pane">
-    <button id="import-btn-right">Import Model</button>
+    <div style="display:flex; gap:10px; margin-bottom:10px; align-items:center;">
+        <button id="btn-m">M</button>
+        <button id="btn-a">A</button>
+        <button id="btn-settings">⋮</button>
+    </div>
+    <button id="btn-code">CODE</button>
+    <div id="code-options" style="display:none; margin-top:5px; flex-direction: column; gap:5px;">
+        <button id="btn-bars">Bars</button>
+        <button id="btn-csharp">C#</button>
+    </div>
 </div>
 
+<!-- THREE.js libraries -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/TransformControls.js"></script>
+
+<!-- Main JS -->
 <script src="main.js"></script>
 </body>
-  </html>
+        </html>
